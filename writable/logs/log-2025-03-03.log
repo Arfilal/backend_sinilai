@@ -1,0 +1,433 @@
+CRITICAL - 2025-03-03 08:10:19 --> Error: Class "Locale" not found
+[Method: GET, Route: /]
+in SYSTEMPATH\CodeIgniter.php on line 189.
+ 1 SYSTEMPATH\Boot.php(321): CodeIgniter\CodeIgniter->initialize()
+ 2 SYSTEMPATH\Boot.php(101): CodeIgniter\Boot::initializeCodeIgniter()
+ 3 ROOTPATH\spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+CRITICAL - 2025-03-03 08:10:19 --> ErrorException: Uncaught Error: Class "Locale" not found in D:\PWEB2\ci4-be\system\I18n\TimeTrait.php:76
+Stack trace:
+#0 D:\PWEB2\ci4-be\system\I18n\TimeTrait.php(117): CodeIgniter\I18n\Time->__construct(NULL, NULL, NULL)
+#1 D:\PWEB2\ci4-be\system\HTTP\ResponseTrait.php(398): CodeIgniter\I18n\Time::now()
+#2 D:\PWEB2\ci4-be\system\HTTP\ResponseTrait.php(376): CodeIgniter\HTTP\Response->sendHeaders()
+#3 D:\PWEB2\ci4-be\system\Debug\ExceptionHandler.php(85): CodeIgniter\HTTP\Response->send()
+#4 D:\PWEB2\ci4-be\system\Debug\Exceptions.php(162): CodeIgniter\Debug\ExceptionHandler->handle(Object(Error), Object(CodeIgniter\HTTP\IncomingRequest), Object(CodeIgniter\HTTP\Response), 500, 1)
+#5 [internal function]: CodeIgniter\Debug\Exceptions->exceptionHandler(Object(Error))
+#6 {main}
+  thrown
+【Previous Exception】
+Error
+Class "Locale" not found
+#0 D:\PWEB2\ci4-be\system\Boot.php(321): CodeIgniter\CodeIgniter->initialize()
+#1 D:\PWEB2\ci4-be\system\Boot.php(101): CodeIgniter\Boot::initializeCodeIgniter()
+#2 D:\PWEB2\ci4-be\spark(84): CodeIgniter\Boot::bootSpark(Object(Config\Paths))
+#3 {main}
+[Method: GET, Route: /]
+in SYSTEMPATH\I18n\TimeTrait.php on line 76.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2025-03-03 07:22:58 --> ParseError: syntax error, unexpected end of file
+[Method: GET, Route: mahasiswa]
+in APPPATH\Config\Routes.php on line 11.
+ 1 SYSTEMPATH\CodeIgniter.php(821): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 2 SYSTEMPATH\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('D:\\PWEB2\\ci4-be\\public\\index.php')
+CRITICAL - 2025-03-03 07:36:27 --> ParseError: syntax error, unexpected token "if"
+[Method: GET, Route: mahasiswa]
+in APPPATH\Controllers\Mahasiswa.php on line 27.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\PWEB2\\ci4-be\\app\\Controllers\\Mahasiswa.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Mahasiswa')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Mahasiswa')
+ 4 SYSTEMPATH\CodeIgniter.php(885): class_exists('\\App\\Controllers\\Mahasiswa', true)
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('D:\\PWEB2\\ci4-be\\public\\index.php')
+CRITICAL - 2025-03-03 07:36:34 --> ParseError: syntax error, unexpected token "if"
+[Method: GET, Route: mahasiswa]
+in APPPATH\Controllers\Mahasiswa.php on line 27.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\PWEB2\\ci4-be\\app\\Controllers\\Mahasiswa.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Mahasiswa')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Mahasiswa')
+ 4 SYSTEMPATH\CodeIgniter.php(885): class_exists('\\App\\Controllers\\Mahasiswa', true)
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('D:\\PWEB2\\ci4-be\\public\\index.php')
+CRITICAL - 2025-03-03 07:38:42 --> ParseError: syntax error, unexpected token ";", expecting identifier or variable or "{" or "$"
+[Method: GET, Route: mahasiswa]
+in APPPATH\Controllers\Mahasiswa.php on line 27.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\PWEB2\\ci4-be\\app\\Controllers\\Mahasiswa.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Mahasiswa')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Mahasiswa')
+ 4 SYSTEMPATH\CodeIgniter.php(885): class_exists('\\App\\Controllers\\Mahasiswa', true)
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('D:\\PWEB2\\ci4-be\\public\\index.php')
+CRITICAL - 2025-03-03 07:45:04 --> ErrorException: Undefined property: App\Controllers\Mahasiswa::$model
+[Method: GET, Route: mahasiswa]
+in APPPATH\Controllers\Mahasiswa.php on line 17.
+ 1 APPPATH\Controllers\Mahasiswa.php(17): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\Mahasiswa::$model', 'D:\\PWEB2\\ci4-be\\app\\Controllers\\Mahasiswa.php', 17)
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Mahasiswa->index()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Mahasiswa))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 8 SYSTEMPATH\rewrite.php(44): require_once('D:\\PWEB2\\ci4-be\\public\\index.php')
+CRITICAL - 2025-03-03 07:54:04 --> ParseError: syntax error, unexpected token "(", expecting identifier or variable or "{" or "$"
+[Method: GET, Route: mahasiswa]
+in APPPATH\Controllers\Mahasiswa.php on line 60.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\PWEB2\\ci4-be\\app\\Controllers\\Mahasiswa.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Mahasiswa')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Mahasiswa')
+ 4 SYSTEMPATH\CodeIgniter.php(885): class_exists('\\App\\Controllers\\Mahasiswa', true)
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('D:\\PWEB2\\ci4-be\\public\\index.php')
+CRITICAL - 2025-03-03 07:54:51 --> ParseError: syntax error, unexpected token "(", expecting identifier or variable or "{" or "$"
+[Method: GET, Route: mahasiswa]
+in APPPATH\Controllers\Mahasiswa.php on line 60.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\PWEB2\\ci4-be\\app\\Controllers\\Mahasiswa.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Mahasiswa')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Mahasiswa')
+ 4 SYSTEMPATH\CodeIgniter.php(885): class_exists('\\App\\Controllers\\Mahasiswa', true)
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('D:\\PWEB2\\ci4-be\\public\\index.php')
+CRITICAL - 2025-03-03 07:54:56 --> ParseError: syntax error, unexpected token "(", expecting identifier or variable or "{" or "$"
+[Method: GET, Route: mahasiswa]
+in APPPATH\Controllers\Mahasiswa.php on line 60.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\PWEB2\\ci4-be\\app\\Controllers\\Mahasiswa.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Mahasiswa')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Mahasiswa')
+ 4 SYSTEMPATH\CodeIgniter.php(885): class_exists('\\App\\Controllers\\Mahasiswa', true)
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('D:\\PWEB2\\ci4-be\\public\\index.php')
+CRITICAL - 2025-03-03 07:57:50 --> ParseError: syntax error, unexpected token "(", expecting identifier or variable or "{" or "$"
+[Method: GET, Route: mahasiswa]
+in APPPATH\Controllers\Mahasiswa.php on line 60.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('D:\\PWEB2\\ci4-be\\app\\Controllers\\Mahasiswa.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Mahasiswa')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Mahasiswa')
+ 4 SYSTEMPATH\CodeIgniter.php(885): class_exists('\\App\\Controllers\\Mahasiswa', true)
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('D:\\PWEB2\\ci4-be\\public\\index.php')
+WARNING - 2025-03-03 09:06:34 --> [DEPRECATED] Creation of dynamic property App\Controllers\Mahasiswa::$model is deprecated in APPPATH\Controllers\Mahasiswa.php on line 13.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Mahasiswa->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('D:\\PWEB2\\ci4-be\\public\\index.php')
+ERROR - 2025-03-03 09:06:34 --> Error connecting to the database: mysqli_sql_exception: Unknown database 'ci4' in D:\PWEB2\ci4-be\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 D:\PWEB2\ci4-be\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'ci4', 3306, '', 0)
+#1 D:\PWEB2\ci4-be\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 D:\PWEB2\ci4-be\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#3 D:\PWEB2\ci4-be\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\PWEB2\ci4-be\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\PWEB2\ci4-be\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 D:\PWEB2\ci4-be\app\Controllers\Mahasiswa.php(17): CodeIgniter\BaseModel->findAll()
+#7 D:\PWEB2\ci4-be\system\CodeIgniter.php(933): App\Controllers\Mahasiswa->index()
+#8 D:\PWEB2\ci4-be\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Mahasiswa))
+#9 D:\PWEB2\ci4-be\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\PWEB2\ci4-be\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 D:\PWEB2\ci4-be\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 D:\PWEB2\ci4-be\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 D:\PWEB2\ci4-be\system\rewrite.php(44): require_once('D:\\PWEB2\\ci4-be...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Unknown database 'ci4' in D:\PWEB2\ci4-be\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 D:\PWEB2\ci4-be\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 D:\PWEB2\ci4-be\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 D:\PWEB2\ci4-be\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 D:\PWEB2\ci4-be\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#4 D:\PWEB2\ci4-be\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#5 D:\PWEB2\ci4-be\app\Controllers\Mahasiswa.php(17): CodeIgniter\BaseModel->findAll()
+#6 D:\PWEB2\ci4-be\system\CodeIgniter.php(933): App\Controllers\Mahasiswa->index()
+#7 D:\PWEB2\ci4-be\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Mahasiswa))
+#8 D:\PWEB2\ci4-be\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\PWEB2\ci4-be\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 D:\PWEB2\ci4-be\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 D:\PWEB2\ci4-be\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 D:\PWEB2\ci4-be\system\rewrite.php(44): require_once('D:\\PWEB2\\ci4-be...')
+#13 {main}
+CRITICAL - 2025-03-03 09:06:34 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'ci4'
+[Method: GET, Route: mahasiswa]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `mahasiswa`
+ORDER BY `nama` ASC', [], false)
+ 3 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\Mahasiswa.php(17): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Mahasiswa->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Mahasiswa))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('D:\\PWEB2\\ci4-be\\public\\index.php')
+CRITICAL - 2025-03-03 09:09:12 --> ParseError: syntax error, unexpected end of file
+[Method: POST, Route: mahasiswa]
+in APPPATH\Config\Routes.php on line 12.
+ 1 SYSTEMPATH\CodeIgniter.php(821): CodeIgniter\Router\RouteCollection->loadRoutes()
+ 2 SYSTEMPATH\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(null)
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('D:\\PWEB2\\ci4-be\\public\\index.php')
+WARNING - 2025-03-03 09:12:29 --> [DEPRECATED] Creation of dynamic property App\Controllers\Mahasiswa::$model is deprecated in APPPATH\Controllers\Mahasiswa.php on line 13.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Mahasiswa->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('D:\\PWEB2\\ci4-be\\public\\index.php')
+ERROR - 2025-03-03 09:12:29 --> Error connecting to the database: mysqli_sql_exception: Unknown database 'ci4' in D:\PWEB2\ci4-be\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 D:\PWEB2\ci4-be\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'ci4', 3306, '', 0)
+#1 D:\PWEB2\ci4-be\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 D:\PWEB2\ci4-be\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#3 D:\PWEB2\ci4-be\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\PWEB2\ci4-be\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\PWEB2\ci4-be\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 D:\PWEB2\ci4-be\app\Controllers\Mahasiswa.php(17): CodeIgniter\BaseModel->findAll()
+#7 D:\PWEB2\ci4-be\system\CodeIgniter.php(933): App\Controllers\Mahasiswa->index()
+#8 D:\PWEB2\ci4-be\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Mahasiswa))
+#9 D:\PWEB2\ci4-be\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\PWEB2\ci4-be\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 D:\PWEB2\ci4-be\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 D:\PWEB2\ci4-be\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 D:\PWEB2\ci4-be\system\rewrite.php(44): require_once('D:\\PWEB2\\ci4-be...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Unknown database 'ci4' in D:\PWEB2\ci4-be\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 D:\PWEB2\ci4-be\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 D:\PWEB2\ci4-be\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 D:\PWEB2\ci4-be\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 D:\PWEB2\ci4-be\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#4 D:\PWEB2\ci4-be\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#5 D:\PWEB2\ci4-be\app\Controllers\Mahasiswa.php(17): CodeIgniter\BaseModel->findAll()
+#6 D:\PWEB2\ci4-be\system\CodeIgniter.php(933): App\Controllers\Mahasiswa->index()
+#7 D:\PWEB2\ci4-be\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Mahasiswa))
+#8 D:\PWEB2\ci4-be\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\PWEB2\ci4-be\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 D:\PWEB2\ci4-be\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 D:\PWEB2\ci4-be\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 D:\PWEB2\ci4-be\system\rewrite.php(44): require_once('D:\\PWEB2\\ci4-be...')
+#13 {main}
+CRITICAL - 2025-03-03 09:12:29 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'ci4'
+[Method: GET, Route: mahasiswa]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `mahasiswa`
+ORDER BY `nama` ASC', [], false)
+ 3 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\Mahasiswa.php(17): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Mahasiswa->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Mahasiswa))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('D:\\PWEB2\\ci4-be\\public\\index.php')
+WARNING - 2025-03-03 09:14:33 --> [DEPRECATED] Creation of dynamic property App\Controllers\Mahasiswa::$model is deprecated in APPPATH\Controllers\Mahasiswa.php on line 13.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Mahasiswa->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('D:\\PWEB2\\ci4-be\\public\\index.php')
+ERROR - 2025-03-03 09:14:33 --> Error connecting to the database: mysqli_sql_exception: Unknown database 'ci4' in D:\PWEB2\ci4-be\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 D:\PWEB2\ci4-be\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'ci4', 3306, '', 0)
+#1 D:\PWEB2\ci4-be\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 D:\PWEB2\ci4-be\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#3 D:\PWEB2\ci4-be\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\PWEB2\ci4-be\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\PWEB2\ci4-be\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#6 D:\PWEB2\ci4-be\app\Controllers\Mahasiswa.php(17): CodeIgniter\BaseModel->findAll()
+#7 D:\PWEB2\ci4-be\system\CodeIgniter.php(933): App\Controllers\Mahasiswa->index()
+#8 D:\PWEB2\ci4-be\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Mahasiswa))
+#9 D:\PWEB2\ci4-be\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\PWEB2\ci4-be\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 D:\PWEB2\ci4-be\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 D:\PWEB2\ci4-be\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 D:\PWEB2\ci4-be\system\rewrite.php(44): require_once('D:\\PWEB2\\ci4-be...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Unknown database 'ci4' in D:\PWEB2\ci4-be\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 D:\PWEB2\ci4-be\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 D:\PWEB2\ci4-be\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 D:\PWEB2\ci4-be\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 D:\PWEB2\ci4-be\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#4 D:\PWEB2\ci4-be\system\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+#5 D:\PWEB2\ci4-be\app\Controllers\Mahasiswa.php(17): CodeIgniter\BaseModel->findAll()
+#6 D:\PWEB2\ci4-be\system\CodeIgniter.php(933): App\Controllers\Mahasiswa->index()
+#7 D:\PWEB2\ci4-be\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Mahasiswa))
+#8 D:\PWEB2\ci4-be\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\PWEB2\ci4-be\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 D:\PWEB2\ci4-be\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 D:\PWEB2\ci4-be\public\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 D:\PWEB2\ci4-be\system\rewrite.php(44): require_once('D:\\PWEB2\\ci4-be...')
+#13 {main}
+CRITICAL - 2025-03-03 09:14:33 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'ci4'
+[Method: GET, Route: mahasiswa]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `mahasiswa`
+ORDER BY `nama` ASC', [], false)
+ 3 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(675): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\Mahasiswa.php(17): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Mahasiswa->index()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Mahasiswa))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('D:\\PWEB2\\ci4-be\\public\\index.php')
+WARNING - 2025-03-03 09:15:22 --> [DEPRECATED] Creation of dynamic property App\Controllers\Mahasiswa::$model is deprecated in APPPATH\Controllers\Mahasiswa.php on line 13.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Mahasiswa->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('D:\\PWEB2\\ci4-be\\public\\index.php')
+WARNING - 2025-03-03 09:17:24 --> [DEPRECATED] Creation of dynamic property App\Controllers\Mahasiswa::$model is deprecated in APPPATH\Controllers\Mahasiswa.php on line 13.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Mahasiswa->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('D:\\PWEB2\\ci4-be\\public\\index.php')
+WARNING - 2025-03-03 09:28:51 --> [DEPRECATED] Creation of dynamic property App\Controllers\Mahasiswa::$model is deprecated in APPPATH\Controllers\Mahasiswa.php on line 13.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Mahasiswa->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('D:\\PWEB2\\ci4-be\\public\\index.php')
+WARNING - 2025-03-03 09:29:25 --> [DEPRECATED] Creation of dynamic property App\Controllers\Mahasiswa::$model is deprecated in APPPATH\Controllers\Mahasiswa.php on line 13.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Mahasiswa->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('D:\\PWEB2\\ci4-be\\public\\index.php')
+WARNING - 2025-03-03 09:29:30 --> [DEPRECATED] Creation of dynamic property App\Controllers\Mahasiswa::$model is deprecated in APPPATH\Controllers\Mahasiswa.php on line 13.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Mahasiswa->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('D:\\PWEB2\\ci4-be\\public\\index.php')
+WARNING - 2025-03-03 09:38:46 --> [DEPRECATED] Creation of dynamic property App\Controllers\Mahasiswa::$model is deprecated in APPPATH\Controllers\Mahasiswa.php on line 13.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Mahasiswa->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('D:\\PWEB2\\ci4-be\\public\\index.php')
+CRITICAL - 2025-03-03 09:38:46 --> Error: Undefined constant "App\Controllers\isExists"
+[Method: PUT, Route: mahasiswa/1]
+in APPPATH\Controllers\Mahasiswa.php on line 49.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Mahasiswa->update('1')
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Mahasiswa))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('D:\\PWEB2\\ci4-be\\public\\index.php')
+CRITICAL - 2025-03-03 09:40:56 --> ErrorException: preg_match(): Compilation failed: unmatched closing parenthesis at offset 10
+[Method: PUT, Route: mahasiswa/1]
+in SYSTEMPATH\Router\Router.php on line 434.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'preg_match(): Compilation failed: unmatched closing parenthesis at offset 10', 'D:\\PWEB2\\ci4-be\\system\\Router\\Router.php', 434)
+ 2 SYSTEMPATH\Router\Router.php(434): preg_match('#^mahasiswa)$#u', 'mahasiswa/1', [])
+ 3 SYSTEMPATH\Router\Router.php(213): CodeIgniter\Router\Router->checkRoutes('mahasiswa/1')
+ 4 SYSTEMPATH\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('mahasiswa/1')
+ 5 SYSTEMPATH\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('D:\\PWEB2\\ci4-be\\public\\index.php')
+WARNING - 2025-03-03 09:41:23 --> [DEPRECATED] Creation of dynamic property App\Controllers\Mahasiswa::$model is deprecated in APPPATH\Controllers\Mahasiswa.php on line 13.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Mahasiswa->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('D:\\PWEB2\\ci4-be\\public\\index.php')
+CRITICAL - 2025-03-03 09:41:23 --> Error: Undefined constant "App\Controllers\isExists"
+[Method: PUT, Route: mahasiswa/1]
+in APPPATH\Controllers\Mahasiswa.php on line 49.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Mahasiswa->update('1')
+ 2 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Mahasiswa))
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('D:\\PWEB2\\ci4-be\\public\\index.php')
+WARNING - 2025-03-03 09:43:10 --> [DEPRECATED] Creation of dynamic property App\Controllers\Mahasiswa::$model is deprecated in APPPATH\Controllers\Mahasiswa.php on line 13.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Mahasiswa->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('D:\\PWEB2\\ci4-be\\public\\index.php')
+WARNING - 2025-03-03 09:43:24 --> [DEPRECATED] Creation of dynamic property App\Controllers\Mahasiswa::$model is deprecated in APPPATH\Controllers\Mahasiswa.php on line 13.
+ 1 SYSTEMPATH\CodeIgniter.php(903): App\Controllers\Mahasiswa->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(498): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 7 SYSTEMPATH\rewrite.php(44): require_once('D:\\PWEB2\\ci4-be\\public\\index.php')
