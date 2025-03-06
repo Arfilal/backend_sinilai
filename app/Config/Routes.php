@@ -10,3 +10,12 @@ $routes->resource("mahasiswa");
 
 
 $routes->resource("dosen");
+
+$routes->resource("kelas");
+
+$routes->resource("nilai");
+
+$routes->resource("matakuliah");
+
+$routes->resource("prodi");
+

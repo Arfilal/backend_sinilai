@@ -3,27 +3,27 @@
 namespace App\Controllers;
 
 use CodeIgniter\API\ResponseTrait;
-use App\Models\ModelDosen;
+use App\Models\ModelKelas;
 
-class Dosen extends BaseController
+class Kelas extends BaseController
 {
     use ResponseTrait;
     function __construct()
     {
-        $this->model = new ModelDosen();
+        $this->model = new ModelKelas();
     }
     public function index()
     {
-        $data = $this->model->orderBy('nama_dosen', 'asc')->findAll();
+        $data = $this->model->orderBy('nama_kelas', 'asc')->findAll();
         return $this->respond($data, 200);
     }
-    public function show($nidn = null)
+    public function show($kode_kelas = null)
     {
-        $data = $this->model->where('nidn', $nidn)->findAll();
+        $data = $this->model->where('kode_kelas', $kode_kelas)->findAll();
         if($data){
             return $this->respond($data,200);
         }else{
-            return $this->failNotFound("data tidak ditemukan untuk nidn $nidn");
+            return $this->failNotFound("data tidak ditemukan untuk kode_kelas $kode_kelas");
         }
     }
     public function create()
@@ -41,24 +41,24 @@ class Dosen extends BaseController
         ];
         return $this->respond($response);
     }
-    public function update($nidn = null)
+    public function update($kode_kelas = null)
     {
         $data = $this->request->getRawInput();
-        $data['nidn'] = $nidn;
+        $data['kode_kelas'] = $kode_kelas;
     
         // Pastikan data dengan NPM ada sebelum update
-        $isExists = $this->model->where('nidn', $nidn)->first();
+        $isExists = $this->model->where('kode_kelas', $kode_kelas)->first();
         if (!$isExists) {
-            return $this->failNotFound("Data tidak ditemukan untuk NIDN $nidn");
+            return $this->failNotFound("Data tidak ditemukan untuk kode_kelas $kode_kelas");
         }
     
         // Gunakan update() dengan where()
-        if ($this->model->where('nidn', $nidn)->set($data)->update()) {
+        if ($this->model->where('kode_kelas', $kode_kelas)->set($data)->update()) {
             return $this->respond([
                 'status' => 200,
                 'error' => null,
                 'messages' => [
-                    'success' => "Data mahasiswa dengan NIDN $nidn berhasil diperbarui"
+                    'success' => "Data mahasiswa dengan kode_kelas $kode_kelas berhasil diperbarui"
                 ]
             ]);
         }
@@ -66,23 +66,23 @@ class Dosen extends BaseController
         return $this->fail("Gagal mengupdate data mahasiswa.");
     }
     
-    public function delete($nidn)
+    public function delete($kode_kelas)
     {
-        $data = $this->model->where('nidn', $nidn)->findAll();
+        $data = $this->model->where('kode_kelas', $kode_kelas)->findAll();
         
         if ($data) {
-            $this->model->where('nidn', $nidn)->delete(); // Perbaikan metode delete()
+            $this->model->where('kode_kelas', $kode_kelas)->delete(); // Perbaikan metode delete()
     
             $response = [
                 'status' => 200,
                 'error' => null,
                 'messages' => [
-                    'success' => "Data dengan NIDN $nidn berhasil dihapus"
+                    'success' => "Data dengan kode_kelas $kode_kelas berhasil dihapus"
                 ]
             ];
             return $this->respond($response); // Perbaikan dari responddelete()
         } else {
-            return $this->failNotFound("Data dengan NIDN $nidn tidak ditemukan");
+            return $this->failNotFound("Data dengan kode_kelas $kode_kelastidak ditemukan");
         }
     }
 }    
