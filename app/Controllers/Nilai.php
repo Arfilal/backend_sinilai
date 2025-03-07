@@ -3,15 +3,17 @@
 namespace App\Controllers;
 
 use CodeIgniter\API\ResponseTrait;
-use App\Models\ModelNilai;
+use App\Models\ModelNilai1; // Gunakan ModelNilai1 yang sudah diperbaiki
 
 class Nilai extends BaseController
 {
     use ResponseTrait;
 
+    private $model;
+
     function __construct()
     {
-        $this->model = new ModelNilai();
+        $this->model = new ModelNilai1(); // Gunakan ModelNilai1 yang benar
     }
 
     public function index()
@@ -20,13 +22,12 @@ class Nilai extends BaseController
         return $this->respond($data, 200);
     }
 
-    // 🔥 Menambahkan metode untuk mendapatkan nilai mahasiswa berdasarkan nama
     public function getNilaiByNama()
     {
         $nama_mhs = $this->request->getGet('nama_mhs'); // Ambil parameter dari URL
         $semester = $this->request->getGet('semester');
 
-        if (!$nama_mhs || !$semester) {
+        if (empty($nama_mhs) || empty($semester)) {
             return $this->fail("Nama mahasiswa dan semester harus diisi!", 400);
         }
 

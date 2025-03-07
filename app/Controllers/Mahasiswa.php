@@ -3,7 +3,7 @@
 namespace App\Controllers;
 
 use CodeIgniter\API\ResponseTrait;
-use App\Models\ModelMahasiswa;
+use App\Models\ModelMahasiswa1;
 
 class Mahasiswa extends BaseController
 {
@@ -12,7 +12,7 @@ class Mahasiswa extends BaseController
 
     function __construct()
     {
-        $this->model = new ModelMahasiswa();
+        $this->model = new ModelMahasiswa1();
     }
 
     public function index()
