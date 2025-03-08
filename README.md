@@ -27,6 +27,26 @@ gambar diatas merupakan contoh dari penggunaan code API dari table nilai, penjel
 
 Postman adalah alat (tool) API testing yang digunakan untuk menguji, mengelola, dan mendokumentasikan API. Dengan Postman, developer dapat mengirim request ke API, melihat responnya, dan melakukan debugging dengan mudah.
 
+## Cara install API
+1. cek apakah composer sudah terinstall
+
+
+
+2. konfigurasi environment
+
+
+
+3. menjalankan server
+
+
+
+4. membuat rest API
+
+
+
+5. uji coba API
+
+
 ## BackEnd
 
 Kebetulan di tugas projek ini saya mendapatkan role sebagai backend, salah saatu tugas backend di projek ini adalah membuat CRUD API, API (Application Programming Interface) adalah sekumpulan aturan atau mekanisme yang memungkinkan dua sistem perangkat lunak berkomunikasi satu sama lain. API bertindak sebagai jembatan yang menghubungkan berbagai aplikasi, perangkat.
