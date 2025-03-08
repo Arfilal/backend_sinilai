@@ -30,21 +30,27 @@ Postman adalah alat (tool) API testing yang digunakan untuk menguji, mengelola, 
 ## Cara install API
 1. cek apakah composer sudah terinstall
 
-
+![Image](https://github.com/user-attachments/assets/00cb2f69-5e93-4713-b054-0ae34469c24f)
 
 2. konfigurasi environment
 
-
+![Image](https://github.com/user-attachments/assets/b688d514-8fd9-4d3d-9f6e-46c66dc6dbc2)
 
 3. menjalankan server
 
-
+![Image](https://github.com/user-attachments/assets/c67d2516-103e-46fb-b96b-a7d996520c15)
 
 4. membuat rest API
 
+![Image](https://github.com/user-attachments/assets/76a71e87-00c0-4c42-bf9b-4b651d692cba)
 
+5. atur routes
 
-5. uji coba API
+![Image](https://github.com/user-attachments/assets/13aedcd7-de17-4ef2-98e4-1bf73adbf23e)
+
+6. uji coba API
+
+![Image](https://github.com/user-attachments/assets/c6617667-98c8-4cd4-a602-a6ba040e6dc1)
 
 
 ## BackEnd
