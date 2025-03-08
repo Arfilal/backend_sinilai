@@ -9,6 +9,7 @@ Sudah pasti yang perlu dipersiapkan adalah device yang mumpuni dikarenakan, ada 
 ![Image](https://github.com/user-attachments/assets/e50c795d-684c-425c-9a72-bde724223753)
 
 gambar diatas merupakan contoh dari penggunaan code API dari table nilai, penjelasan singkat dari code diatas Fungsi getNilaiByNama() adalah sebuah metode dalam controller CodeIgniter 4 yang digunakan untuk mengambil data nilai mahasiswa berdasarkan nama dan semester melalui API
+
 ### Mengambil Parameter dari URL
 1. getGet('nama_mhs') → Mengambil nilai parameter nama_mhs dari URL.
 2. getGet('semester') → Mengambil nilai parameter semester dari URL.
@@ -19,6 +20,12 @@ gambar diatas merupakan contoh dari penggunaan code API dari table nilai, penjel
    
 ### Mengembalikan Data Nilai Mahasiswa
 1. Jika data ditemukan → Mengembalikan data nilai mahasiswa dalam format JSON dengan status 200 (OK).
+
+## Contoh Postman:
+
+![Image](https://github.com/user-attachments/assets/263755b8-b042-4596-b9e2-492c82e9bc11)
+
+Postman adalah alat (tool) API testing yang digunakan untuk menguji, mengelola, dan mendokumentasikan API. Dengan Postman, developer dapat mengirim request ke API, melihat responnya, dan melakukan debugging dengan mudah.
 
 ## BackEnd
 
