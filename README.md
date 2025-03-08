@@ -3,7 +3,7 @@
 ## Apa yang perlu dipersiapkan
 
 Sudah pasti yang perlu dipersiapkan adalah device yang mumpuni dikarenakan, ada beberapa aplikasi yang perlu diinstall apabila belum memliki, seperti Docker, postman, dan vs code kemudian untuk projek ini terbagi menjadi beberapa role seperti frontend, backend, DB Engneer, DevOps, dan SQA
-
+![Image](https://github.com/user-attachments/assets/e50c795d-684c-425c-9a72-bde724223753)
 ## BackEnd
 
 Kebetulan di tugas projek ini saya mendapatkan role sebagai backend, salah saatu tugas backend di projek ini adalah membuat CRUD API, API (Application Programming Interface) adalah sekumpulan aturan atau mekanisme yang memungkinkan dua sistem perangkat lunak berkomunikasi satu sama lain. API bertindak sebagai jembatan yang menghubungkan berbagai aplikasi, perangkat.
