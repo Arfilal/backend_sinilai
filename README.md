@@ -1,60 +1,68 @@
-# CodeIgniter 4 Framework
+# Sinilai ( Sistem Pengelolaan Nilai Mahasiswa)
 
-## What is CodeIgniter?
+## Apa yang perlu dipersiapkan
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+Sudah pasti yang perlu dipersiapkan adalah device yang mumpuni dikarenakan, ada beberapa aplikasi yang perlu diinstall apabila belum memliki, seperti Docker, postman, dan vs code kemudian untuk projek ini terbagi menjadi beberapa role seperti frontend, backend, DB Engneer, DevOps, dan SQA
 
-This repository holds the distributable version of the framework.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+## Contoh code API yang digunakan:
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+![Image](https://github.com/user-attachments/assets/e50c795d-684c-425c-9a72-bde724223753)
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+gambar diatas merupakan contoh dari penggunaan code API dari table nilai, penjelasan singkat dari code diatas Fungsi getNilaiByNama() adalah sebuah metode dalam controller CodeIgniter 4 yang digunakan untuk mengambil data nilai mahasiswa berdasarkan nama dan semester melalui API
 
-## Important Change with index.php
+### Mengambil Parameter dari URL
+1. getGet('nama_mhs') → Mengambil nilai parameter nama_mhs dari URL.
+2. getGet('semester') → Mengambil nilai parameter semester dari URL.
+   
+### Mengambil Data Nilai dari Model
+1. Fungsi getNilaiMahasiswa($nama_mhs, $semester) akan mengambil data nilai mahasiswa berdasarkan nama dan semester dari database.
+2. Metode ini dipanggil dari model yang telah dibuat sebelumnya.
+   
+### Mengembalikan Data Nilai Mahasiswa
+1. Jika data ditemukan → Mengembalikan data nilai mahasiswa dalam format JSON dengan status 200 (OK).
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+## Contoh Postman:
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+![Image](https://github.com/user-attachments/assets/263755b8-b042-4596-b9e2-492c82e9bc11)
 
-**Please** read the user guide for a better explanation of how CI4 works!
+Postman adalah alat (tool) API testing yang digunakan untuk menguji, mengelola, dan mendokumentasikan API. Dengan Postman, developer dapat mengirim request ke API, melihat responnya, dan melakukan debugging dengan mudah.
 
-## Repository Management
+## Cara install API
+1. cek apakah composer sudah terinstall
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+![Image](https://github.com/user-attachments/assets/00cb2f69-5e93-4713-b054-0ae34469c24f)
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
+2. konfigurasi environment
 
-## Contributing
+![Image](https://github.com/user-attachments/assets/b688d514-8fd9-4d3d-9f6e-46c66dc6dbc2)
 
-We welcome contributions from the community.
+3. menjalankan server
 
-Please read the [*Contributing to CodeIgniter*](https://github.com/codeigniter4/CodeIgniter4/blob/develop/CONTRIBUTING.md) section in the development repository.
+![Image](https://github.com/user-attachments/assets/c67d2516-103e-46fb-b96b-a7d996520c15)
 
-## Server Requirements
+4. membuat rest API
 
-PHP version 8.1 or higher is required, with the following extensions installed:
+![Image](https://github.com/user-attachments/assets/76a71e87-00c0-4c42-bf9b-4b651d692cba)
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
+5. atur routes
 
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - If you are still using PHP 7.4 or 8.0, you should upgrade immediately.
-> - The end of life date for PHP 8.1 will be December 31, 2025.
+![Image](https://github.com/user-attachments/assets/13aedcd7-de17-4ef2-98e4-1bf73adbf23e)
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+6. uji coba API
 
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+![Image](https://github.com/user-attachments/assets/c6617667-98c8-4cd4-a602-a6ba040e6dc1)
+
+
+## BackEnd
+
+Kebetulan di tugas projek ini saya mendapatkan role sebagai backend, salah saatu tugas backend di projek ini adalah membuat CRUD API, API (Application Programming Interface) adalah sekumpulan aturan atau mekanisme yang memungkinkan dua sistem perangkat lunak berkomunikasi satu sama lain. API bertindak sebagai jembatan yang menghubungkan berbagai aplikasi, perangkat.
+untuk table yang saya buat sendiri ada 6 table, terdiri dari table dosen, mahasiswa, kelas, prodi, nilai, mata kuliah, untuk table yang memili code API yaitu table nilai dan mahasiswa karena terhubung dengan beberapa table
+
+## Tujuan Praktikum
+1. Memahami dan menerapkan konsep MVC (Model-View-Controller) dalam CodeIgniter dan Laravel.
+2. Mengembangkan sistem pengelolaan nilai mahasiswa secara online.
+3. Menggunakan REST API untuk komunikasi antara backend (CodeIgniter) dan frontend (Laravel).
+4. Menerapkan fitur pengolahan dan rekapitulasi nilai otomatis.
+
+## Studi Kasus
+Sistem ini digunakan oleh dosen dan admin akademik untuk memasukkan, mengelola, dan memantau nilai mahasiswa dalam suatu mata kuliah. Mahasiswa juga dapat melihat hasil nilai mereka setelah dipublikasikan.
