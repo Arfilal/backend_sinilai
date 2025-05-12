@@ -36,6 +36,8 @@ class MataKuliah extends BaseController
     {
         $kode_matkul = $this->request->getVar('kode_matkul');
         $nama_matkul = $this->request->getVar('nama_matkul');
+         $nama_matkul = $this->request->getVar('semester');
+          $nama_matkul = $this->request->getVar('sks');
 
         if (empty($kode_matkul) || empty($nama_matkul)) {
             return $this->response->setJSON(['error' => 'Data tidak lengkap']);
