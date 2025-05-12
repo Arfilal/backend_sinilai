@@ -6,14 +6,14 @@ use CodeIgniter\Model;
 class ModelProdi extends Model
 {
     protected $table = "prodi";
-    protected $primarykey = "id_prodi";
+    protected $primaryKey = "id_prodi";
     protected $allowedFields = ['id_prodi', 'nama_prodi'];
     
     protected $validationRules = [
         'id_prodi' =>'required',
         'nama_prodi' =>'required',
     ];
-    protected $validationMesaages = [
+    protected $validationMessages = [
         'id_prodi'=>[
             'required'=>'silahkan masukan id prodi'
         ],

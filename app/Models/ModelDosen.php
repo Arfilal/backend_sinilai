@@ -6,7 +6,7 @@ use CodeIgniter\Model;
 class ModelDosen extends Model
 {
     protected $table = "dosen";
-    protected $primarykey = "nidn";
+    protected $primaryKey = "nidn";
     protected $allowedFields = ['nidn', 'nama_dosen'];
     
     protected $validationRules = [
@@ -14,7 +14,7 @@ class ModelDosen extends Model
         'nama_dosen' =>'required',
        
     ];
-    protected $validationMesaages = [
+    protected $validationMessages = [
         'nidn'=>[
             'required'=>'silahkan masukan nama'
         ],

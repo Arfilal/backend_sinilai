@@ -6,7 +6,7 @@ use CodeIgniter\Model;
 class ModelMataKuliah extends Model
 {
     protected $table = "mata_kuliah";
-    protected $primarykey = "kode_matkul";
+    protected $primaryKey = "kode_matkul";
     protected $allowedFields = ['kode_matkul', 'nama_matkul', 'semester', 'sks'];
     
     protected $validationRules = [
@@ -16,7 +16,7 @@ class ModelMataKuliah extends Model
         'sks' =>'required',
        
     ];
-    protected $validationMesaages = [
+    protected $validationMessages = [
         'kode_matkul'=>[
             'required'=>'silahkan masukan kode matkul'
         ],
