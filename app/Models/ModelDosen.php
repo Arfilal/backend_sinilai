@@ -16,7 +16,7 @@ class ModelDosen extends Model
     ];
     protected $validationMessages = [
         'nidn'=>[
-            'required'=>'silahkan masukan nama'
+            'required'=>'silahkan masukan nidn'
         ],
         'nama_dosen'=>[
             'required'=>'silahkan masukan nama'
