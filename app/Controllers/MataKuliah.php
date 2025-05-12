@@ -70,14 +70,18 @@ class MataKuliah extends BaseController
     {
         $kode_matkul_baru = $this->request->getVar('kode_matkul');
         $nama_matkul = $this->request->getVar('nama_matkul');
+        $semester = $this->request->getVar('semester');
+        $sks = $this->request->getVar('sks');
 
         if (empty($kode_matkul_baru) || empty($nama_matkul)) {
             return $this->response->setJSON(['error' => 'Data tidak lengkap']);
         }
 
         $data = [
-            'kode_matkul' => $kode_matkul_baru,
-            'nama_matkul' => $nama_matkul
+            'kode_matkul' => $kode_matkul,
+            'nama_matkul' => $nama_matkul,
+            'semester' => $semester,
+            'sks' => $sks
         ];
 
         $existing = $this->model->where('kode_matkul', $kode_matkul)->first();
