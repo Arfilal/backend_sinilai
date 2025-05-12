@@ -4,103 +4,116 @@ namespace App\Controllers;
 
 use CodeIgniter\API\ResponseTrait;
 use App\Models\ModelDosen;
+use App\Controllers\BaseController;
 
 class Dosen extends BaseController
 {
     use ResponseTrait;
-
     protected $model;
 
-    public function __construct()
+    function __construct()
     {
         $this->model = new ModelDosen();
     }
-
-    // Get all dosen
     public function index()
     {
         $data = $this->model->orderBy('nama_dosen', 'asc')->findAll();
         return $this->respond($data, 200);
     }
-
-    // Get dosen by NIDN
     public function show($nidn = null)
     {
-        $data = $this->model->where('nidn', $nidn)->first();
+        $data = $this->model->where('nidn', $nidn)->findAll();
         if ($data) {
             return $this->respond($data, 200);
         } else {
-            return $this->failNotFound("Data tidak ditemukan untuk NIDN $nidn");
+            return $this->failNotFound("data tidak ditemukan untuk nidn $nidn");
         }
     }
-
-    // Create new dosen
     public function create()
     {
-        $data = $this->request->getJSON(true);
-        if (!$data) {
-            $data = $this->request->getPost();
+        // Ambil data dari request
+        $nidn = $this->request->getVar('nidn');
+        $nama_dosen = $this->request->getVar('nama_dosen');
+
+        // Pastikan data valid
+        if (empty($nidn) || empty($nama_dosen)) {
+            return $this->response->setJSON(['error' => 'Data tidak lengkap']);
         }
 
-        if (!$this->model->save($data)) {
-            return $this->failValidationErrors($this->model->errors());
-        }
+        // Masukkan data ke dalam model
+        $data = [
+            'nidn' => $nidn,
+            'nama_dosen' => $nama_dosen
+        ];
 
-        return $this->respondCreated([
-            'status' => 201,
-            'error' => null,
-            'messages' => [
-                'success' => 'Data dosen berhasil ditambahkan'
-            ]
-        ]);
+        // Insert data ke database
+        if ($this->model->insert($data)) {
+            return $this->response->setJSON(['message' => 'Aspirasi berhasil dikirim']);
+        } else {
+            return $this->response->setJSON(['error' => 'Gagal mengirim aspirasi']);
+        }
     }
 
-    // Update dosen by NIDN
-    public function update($nidn = null)
+    public function edit($nidn)
     {
-        $data = $this->request->getJSON(true);
-        if (!$data) {
-            $data = $this->request->getRawInput();
+        $dosen = $this->model->find($nidn);
+        if (!$dosen) {
+            return $this->response->setStatusCode(404)->setJSON(['message' => 'Data tidak ditemukan']);
+        }
+        return $this->response->setJSON($dosen);
+    }
+
+    public function update($nidn)
+    {
+        $nidn = $this->request->getVar('nidn');
+        $nama_dosen = $this->request->getVar('nama_dosen');
+
+        // Pastikan data valid
+        if (empty($nidn) || empty($nama_dosen)) {
+            return $this->response->setJSON(['error' => 'Data tidak lengkap']);
         }
 
-        // Pastikan data ada
+        // Masukkan data ke dalam model
+        $data = [
+            'nidn' => $nidn,
+            'nama_dosen' => $nama_dosen
+        ];
+
         $existing = $this->model->where('nidn', $nidn)->first();
         if (!$existing) {
             return $this->failNotFound("Data tidak ditemukan untuk NIDN $nidn");
         }
 
-        // Update data
-        if (!$this->model->update($nidn, $data)) {
-            return $this->failValidationErrors($this->model->errors());
+        $updated = $this->model->where('nidn', $nidn)->set($data)->update();
+
+        if ($updated) {
+            return $this->respond([
+                'status' => 200,
+                'messages' => ['success' => "Data berhasil diperbarui"]
+            ]);
         }
 
-        return $this->respond([
-            'status' => 200,
-            'error' => null,
-            'messages' => [
-                'success' => "Data dosen dengan NIDN $nidn berhasil diperbarui"
-            ]
-        ]);
+        return $this->fail("Gagal memperbarui data.");
     }
 
-    // Delete dosen by NIDN
-    public function delete($nidn = null)
+
+    public function delete($nidn)
     {
-        $existing = $this->model->where('nidn', $nidn)->first();
-        if (!$existing) {
+        $data = $this->model->where('nidn', $nidn)->findAll();
+
+        if ($data) {
+            $this->model->where('nidn', $nidn)->delete(); // Perbaikan metode delete()
+
+            $response = [
+                'status' => 200,
+                'error' => null,
+                'messages' => [
+                    'success' => "Data dengan NIDN $nidn berhasil dihapus"
+                ]
+            ];
+            return $this->respond($response); // Perbaikan dari responddelete()
+        } else {
             return $this->failNotFound("Data dengan NIDN $nidn tidak ditemukan");
         }
-
-        if (!$this->model->delete($nidn)) {
-            return $this->failServerError("Gagal menghapus data dosen");
-        }
-
-        return $this->respondDeleted([
-            'status' => 200,
-            'error' => null,
-            'messages' => [
-                'success' => "Data dengan NIDN $nidn berhasil dihapus"
-            ]
-        ]);
     }
 }
