@@ -16,17 +16,17 @@ class Dosen extends BaseController
         $this->model = new ModelDosen();
     }
 
-    // Get all data dosen
+    // Get all dosen
     public function index()
     {
         $data = $this->model->orderBy('nama_dosen', 'asc')->findAll();
         return $this->respond($data, 200);
     }
 
-    // Get data by NIDN
+    // Get dosen by NIDN
     public function show($nidn = null)
     {
-        $data = $this->model->where('nidn', $nidn)->findAll();
+        $data = $this->model->where('nidn', $nidn)->first();
         if ($data) {
             return $this->respond($data, 200);
         } else {
@@ -37,28 +37,25 @@ class Dosen extends BaseController
     // Create new dosen
     public function create()
     {
-        // Menerima data dari JSON atau form-data
         $data = $this->request->getJSON(true);
         if (!$data) {
-            $data = $this->request->getPost(); // fallback untuk form-data
+            $data = $this->request->getPost();
         }
 
-        // Validasi atau simpan data
         if (!$this->model->save($data)) {
             return $this->failValidationErrors($this->model->errors());
         }
 
-        $response = [
+        return $this->respondCreated([
             'status' => 201,
             'error' => null,
             'messages' => [
-                'success' => 'Berhasil memasukkan data dosen'
+                'success' => 'Data dosen berhasil ditambahkan'
             ]
-        ];
-        return $this->respond($response, 201);
+        ]);
     }
 
-    // Update dosen
+    // Update dosen by NIDN
     public function update($nidn = null)
     {
         $data = $this->request->getJSON(true);
@@ -66,44 +63,44 @@ class Dosen extends BaseController
             $data = $this->request->getRawInput();
         }
 
-        $data['nidn'] = $nidn;
-
-        $isExists = $this->model->where('nidn', $nidn)->first();
-        if (!$isExists) {
+        // Pastikan data ada
+        $existing = $this->model->where('nidn', $nidn)->first();
+        if (!$existing) {
             return $this->failNotFound("Data tidak ditemukan untuk NIDN $nidn");
         }
 
-        if ($this->model->where('nidn', $nidn)->set($data)->update()) {
-            return $this->respond([
-                'status' => 200,
-                'error' => null,
-                'messages' => [
-                    'success' => "Data dosen dengan NIDN $nidn berhasil diperbarui"
-                ]
-            ]);
+        // Update data
+        if (!$this->model->update($nidn, $data)) {
+            return $this->failValidationErrors($this->model->errors());
         }
 
-        return $this->fail("Gagal mengupdate data dosen.");
+        return $this->respond([
+            'status' => 200,
+            'error' => null,
+            'messages' => [
+                'success' => "Data dosen dengan NIDN $nidn berhasil diperbarui"
+            ]
+        ]);
     }
 
-    // Delete dosen
-    public function delete($nidn)
+    // Delete dosen by NIDN
+    public function delete($nidn = null)
     {
-        $data = $this->model->where('nidn', $nidn)->first();
-
-        if ($data) {
-            $this->model->where('nidn', $nidn)->delete();
-
-            $response = [
-                'status' => 200,
-                'error' => null,
-                'messages' => [
-                    'success' => "Data dengan NIDN $nidn berhasil dihapus"
-                ]
-            ];
-            return $this->respond($response);
-        } else {
+        $existing = $this->model->where('nidn', $nidn)->first();
+        if (!$existing) {
             return $this->failNotFound("Data dengan NIDN $nidn tidak ditemukan");
         }
+
+        if (!$this->model->delete($nidn)) {
+            return $this->failServerError("Gagal menghapus data dosen");
+        }
+
+        return $this->respondDeleted([
+            'status' => 200,
+            'error' => null,
+            'messages' => [
+                'success' => "Data dengan NIDN $nidn berhasil dihapus"
+            ]
+        ]);
     }
 }
