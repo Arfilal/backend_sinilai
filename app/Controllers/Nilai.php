@@ -3,7 +3,7 @@
 namespace App\Controllers;
 
 use CodeIgniter\API\ResponseTrait;
-use App\Models\ModelNilai1;
+use App\Models\ModelNilai;
 use App\Controllers\BaseController;
 
 class Nilai extends BaseController
@@ -13,7 +13,7 @@ class Nilai extends BaseController
 
     public function __construct()
     {
-        $this->model = new ModelNilai1();
+        $this->model = new ModelNilai();
     }
 
     public function index()

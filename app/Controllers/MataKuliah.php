@@ -78,7 +78,6 @@ class MataKuliah extends BaseController
         }
 
         $data = [
-            'kode_matkul' => $kode_matkul,
             'nama_matkul' => $nama_matkul,
             'semester' => $semester,
             'sks' => $sks
