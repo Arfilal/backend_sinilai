@@ -32,54 +32,52 @@ class Nilai extends BaseController
         }
     }
 
-   public function create()
-{
-    $id_nilai = $this->request->getVar('id_nilai');
-    $npm = $this->request->getVar('npm');
-    $kode_matkul = $this->request->getVar('kode_matkul');
-    $nidn = $this->request->getVar('nidn');
-    $semester = $this->request->getVar('semester');
-    $tugas = $this->request->getVar('tugas');
-    $uts = $this->request->getVar('uts');
-    $uas = $this->request->getVar('uas');
+    public function create()
+    {
+        $npm = $this->request->getVar('npm');
+        $kode_matkul = $this->request->getVar('kode_matkul');
+        $nidn = $this->request->getVar('nidn');
+        $tugas = $this->request->getVar('tugas');
+        $uts = $this->request->getVar('uts');
+        $uas = $this->request->getVar('uas');
 
-    // Validasi input
-    if (
-        empty($npm) || empty($kode_matkul) || empty($semester) ||
-        empty($tugas) || empty($uts) || empty($uas)
-    ) {
-        return $this->response->setJSON(['error' => 'Data tidak lengkap']);
+        if (empty($npm) || empty($kode_matkul) || empty($nidn) || empty($tugas) || empty($uts) || empty($uas)) {
+            return $this->response->setJSON(['error' => 'Data tidak lengkap']);
+        }
+
+        $data = [
+            'npm' => $npm,
+            'kode_matkul' => $kode_matkul,
+            'nidn' => $nidn,
+            'tugas' => $tugas,
+            'uts' => $uts,
+            'uas' => $uas,
+            // jangan masukkan nilai_akhir dan status di sini
+        ];
+
+        if ($this->model->insert($data)) {
+            $id_nilai_baru = $this->model->getInsertID();
+            $data_baru = $this->model->find($id_nilai_baru);
+
+            return $this->respond([
+                'success' => true,
+                'message' => 'Nilai berhasil ditambahkan!',
+                'data' => $data_baru
+            ], 201);
+        } else {
+            return $this->failServerError('Gagal menambahkan data nilai');
+        }
     }
 
-    if (!is_numeric($tugas) || !is_numeric($uts) || !is_numeric($uas)) {
-        return $this->response->setJSON(['error' => 'Nilai tugas, UTS, dan UAS harus berupa angka']);
+
+    public function edit($id_nilai)
+    {
+        $nilai = $this->model->find($id_nilai);
+        if (!$nilai) {
+            return $this->response->setStatusCode(404)->setJSON(['message' => 'Data tidak ditemukan']);
+        }
+        return $this->response->setJSON($nilai);
     }
-
-    // Hitung nilai akhir dan status
-    $nilai = ($tugas + $uts + $uas) / 3;
-    $status = $nilai >= 50 ? 'Lulus' : 'Tidak Lulus';
-
-    // Siapkan data untuk disimpan
-    $data = [
-        'npm' => $npm,
-        'kode_matkul' => $kode_matkul,
-        'nidn' => $nidn,
-        'semester' => $semester,
-        'tugas' => $tugas,
-        'uts' => $uts,
-        'uas' => $uas,
-        'nilai_akhir' => $nilai,
-        'status' => $status
-    ];
-
-    // Insert ke database
-    if ($this->model->insert($data)) {
-        return $this->response->setJSON(['message' => 'Data nilai berhasil ditambahkan']);
-    } else {
-        return $this->response->setJSON(['error' => 'Gagal menambahkan data nilai']);
-    }
-}   
-
 
     public function update($id_nilai)
     {
@@ -98,7 +96,7 @@ class Nilai extends BaseController
         $uas = $this->request->getVar('uas');
 
         // Validasi input
-        if (empty($npm) || empty($tugas) || empty($uts) || empty($uas)) {
+        if (empty($npm) || empty($kode_matkul) || empty($semester) || empty($tugas) || empty($uts) || empty($uas)) {
             return $this->fail("Data tidak lengkap", 400);
         }
 
@@ -132,15 +130,6 @@ class Nilai extends BaseController
         }
     }
 
-    public function edit($id_nilai)
-    {
-        $nilai = $this->model->find($id_nilai);
-        if (!$nilai) {
-            return $this->response->setStatusCode(404)->setJSON(['message' => 'Data tidak ditemukan']);
-        }
-        return $this->response->setJSON($nilai);
-    }
-    
     public function delete($id_nilai)
     {
         $data = $this->model->where('id_nilai', $id_nilai)->findAll();
