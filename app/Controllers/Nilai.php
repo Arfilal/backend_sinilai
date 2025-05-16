@@ -132,6 +132,15 @@ class Nilai extends BaseController
         }
     }
 
+    public function edit($id_nilai)
+    {
+        $nilai = $this->model->find($id_nilai);
+        if (!$nilai) {
+            return $this->response->setStatusCode(404)->setJSON(['message' => 'Data tidak ditemukan']);
+        }
+        return $this->response->setJSON($nilai);
+    }
+    
     public function delete($id_nilai)
     {
         $data = $this->model->where('id_nilai', $id_nilai)->findAll();
