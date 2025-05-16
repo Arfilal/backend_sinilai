@@ -34,10 +34,13 @@ class Nilai extends BaseController
 
     public function create()
     {
+        $id_nilai = $this->request->getVar('id_nilai');
         $npm = $this->request->getVar('npm');
         $kode_matkul = $this->request->getVar('kode_matkul');
-        $semester = $this->request->getVar('semester');
-        $nilai = $this->request->getVar('nilai');
+        $nidn = $this->request->getVar('nidn');
+        $tugas = $this->request->getVar('tugas');
+        $uts = $this->request->getVar('uts');
+        $uas = $this->request->getVar('uas');
 
         if (empty($npm) || empty($kode_matkul) || empty($semester) || empty($nilai)) {
             return $this->response->setJSON(['error' => 'Data tidak lengkap']);
@@ -59,35 +62,53 @@ class Nilai extends BaseController
 
     public function update($id_nilai)
     {
-        $npm = $this->request->getVar('npm');
-        $kode_matkul = $this->request->getVar('kode_matkul');
-        $semester = $this->request->getVar('semester');
-        $nilai = $this->request->getVar('nilai');
-
-        if (empty($npm) || empty($kode_matkul) || empty($semester) || empty($nilai)) {
-            return $this->response->setJSON(['error' => 'Data tidak lengkap']);
+        // Cek apakah data dengan ID tersebut ada
+        $existing = $this->model->find($id_nilai);
+        if (!$existing) {
+            return $this->failNotFound("Data dengan ID $id_nilai tidak ditemukan");
         }
 
+        // Ambil data dari request (x-www-form-urlencoded atau form-data)
+        $npm = $this->request->getVar('npm');
+        $kode_matkul = $this->request->getVar('kode_matkul');
+        $nidn = $this->request->getVar('nidn');
+        $tugas = $this->request->getVar('tugas');
+        $uts = $this->request->getVar('uts');
+        $uas = $this->request->getVar('uas');
+
+        // Validasi input
+        if (empty($npm) || empty($tugas) || empty($uts) || empty($uas)) {
+            return $this->fail("Data tidak lengkap", 400);
+        }
+
+        if (!is_numeric($tugas) || !is_numeric($uts) || !is_numeric($uas)) {
+            return $this->fail("Nilai tugas, UTS, dan UAS harus berupa angka", 400);
+        }
+
+        // Hitung nilai akhir dan status
+        $nilai_akhir = ($tugas + $uts + $uas) / 3;
+        $status = $nilai_akhir >= 50 ? 'Lulus' : 'Tidak Lulus';
+
+        // Siapkan data yang akan diupdate
         $data = [
             'npm' => $npm,
             'kode_matkul' => $kode_matkul,
-            'semester' => $semester,
-            'nilai' => $nilai
+            'nidn' => $nidn,
+            'tugas' => $tugas,
+            'uts' => $uts,
+            'uas' => $uas,
+            'nilai_akhir' => $nilai_akhir,
+            'status' => $status,
         ];
 
-        $existing = $this->model->where('id_nilai', $id_nilai)->first();
-        if (!$existing) {
-            return $this->failNotFound("Data tidak ditemukan untuk ID $id_nilai");
-        }
-
+        // Update data
         if ($this->model->update($id_nilai, $data)) {
             return $this->respond([
-                'status' => 200,
-                'messages' => ['success' => "Data nilai berhasil diperbarui"]
-            ]);
+                'message' => "Data nilai dengan ID $id_nilai berhasil diperbarui"
+            ], 200);
+        } else {
+            return $this->fail("Gagal memperbarui data nilai", 500);
         }
-
-        return $this->fail("Gagal memperbarui data nilai.");
     }
 
     public function delete($id_nilai)
