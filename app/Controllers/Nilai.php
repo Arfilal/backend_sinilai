@@ -32,42 +32,53 @@ class Nilai extends BaseController
         }
     }
 
-    public function create()
-    {
+ public function create()
+{
+    $json = $this->request->getJSON();
+
+    if ($json) {
+        $npm = $json->npm ?? null;
+        $kode_matkul = $json->kode_matkul ?? null;
+        $nidn = $json->nidn ?? null;
+        $tugas = $json->tugas ?? null;
+        $uts = $json->uts ?? null;
+        $uas = $json->uas ?? null;
+    } else {
+        // fallback ke form-data
         $npm = $this->request->getVar('npm');
         $kode_matkul = $this->request->getVar('kode_matkul');
         $nidn = $this->request->getVar('nidn');
         $tugas = $this->request->getVar('tugas');
         $uts = $this->request->getVar('uts');
         $uas = $this->request->getVar('uas');
-
-        if (empty($npm) || empty($kode_matkul) || empty($nidn) || empty($tugas) || empty($uts) || empty($uas)) {
-            return $this->response->setJSON(['error' => 'Data tidak lengkap']);
-        }
-
-        $data = [
-            'npm' => $npm,
-            'kode_matkul' => $kode_matkul,
-            'nidn' => $nidn,
-            'tugas' => $tugas,
-            'uts' => $uts,
-            'uas' => $uas,
-            // jangan masukkan nilai_akhir dan status di sini
-        ];
-
-        if ($this->model->insert($data)) {
-            $id_nilai_baru = $this->model->getInsertID();
-            $data_baru = $this->model->find($id_nilai_baru);
-
-            return $this->respond([
-                'success' => true,
-                'message' => 'Nilai berhasil ditambahkan!',
-                'data' => $data_baru
-            ], 201);
-        } else {
-            return $this->failServerError('Gagal menambahkan data nilai');
-        }
     }
+
+    if (empty($npm) || empty($kode_matkul) || empty($nidn) || empty($tugas) || empty($uts) || empty($uas)) {
+        return $this->fail("Data tidak lengkap", 400);
+    }
+
+    $data = [
+        'npm' => $npm,
+        'kode_matkul' => $kode_matkul,
+        'nidn' => $nidn,
+        'tugas' => $tugas,
+        'uts' => $uts,
+        'uas' => $uas,
+    ];
+
+    if ($this->model->insert($data)) {
+        $id_nilai_baru = $this->model->getInsertID();
+        $data_baru = $this->model->find($id_nilai_baru);
+
+        return $this->respond([
+            'success' => true,
+            'message' => 'Nilai berhasil ditambahkan!',
+            'data' => $data_baru
+        ], 201);
+    } else {
+        return $this->failServerError('Gagal menambahkan data nilai');
+    }
+}
 
 
     public function edit($id_nilai)
