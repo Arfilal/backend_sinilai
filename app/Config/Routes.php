@@ -19,3 +19,6 @@ $routes->resource("matakuliah");
 
 $routes->resource("prodi");
 
+$routes->get('nilai/getdata/(:num)', 'Nilai::getData/$1');
+
+

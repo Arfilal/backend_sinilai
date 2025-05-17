@@ -149,6 +149,18 @@ class Nilai extends BaseController
         }
     }
 
+// Tambahkan di sini, misalnya setelah getNilaiByNama()
+public function getData($id_nilai)
+{
+    $data = $this->model->find($id_nilai);
+
+    if (!$data) {
+        return $this->failNotFound("Data nilai dengan ID $id_nilai tidak ditemukan");
+    }
+
+    return $this->respond($data, 200);
+}
+
     public function getNilaiByNama()
     {
         $nama_mhs = $this->request->getGet('nama_mhs');
