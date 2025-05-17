@@ -19,8 +19,6 @@ protected $validationRules = [
     'tugas' =>'required',
     'uts' =>'required',
     'uas' =>'required',
-    'nilai_akhir' =>'required',
-    'status' =>'required',
 ];
 
 protected $validationMessages = [
@@ -31,8 +29,6 @@ protected $validationMessages = [
     'tugas'=> ['required'=>'Silahkan masukkan tugas'],
     'uts'=> ['required'=>'Silahkan masukkan uts'],
     'uas'=> ['required'=>'Silahkan masukkan uas'],
-    'nilai_akhir'=> ['required'=>'Silahkan masukkan nilai_akhir'],
-    'status'=> ['required'=>'Silahkan masukkan status'],
 ];
 
 
