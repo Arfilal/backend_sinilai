@@ -1,0 +1,32 @@
+{
+	"info": {
+		"_postman_id": "27a7d2a0-3e30-4f85-8e13-33d5520874c0",
+		"name": "nilai view",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42769259"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/nilaiview",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/nilaiview",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"nilaiview"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
