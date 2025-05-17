@@ -19,6 +19,5 @@ $routes->resource("matakuliah");
 
 $routes->resource("prodi");
 
-$routes->resource('nilaiview'); // otomatis: /nilaiview dan /nilaiview/{id}
-
+$routes->get('nilaiview', 'NilaiView::index');
 
