@@ -96,7 +96,7 @@ class Nilai extends BaseController
         $uas = $this->request->getVar('uas');
 
         // Validasi input
-        if (empty($npm) || empty($kode_matkul) || empty($semester) || empty($tugas) || empty($uts) || empty($uas)) {
+        if (empty($npm) || empty($kode_matkul) || empty($nidn) || empty($tugas) || empty($uts) || empty($uas)) {
             return $this->fail("Data tidak lengkap", 400);
         }
 
