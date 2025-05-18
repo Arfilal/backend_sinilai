@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-use App\Models\ModelViewNilai;
+use App\Models\v_nilai_mahasiswa;
 use CodeIgniter\RESTful\ResourceController;
 
 class NilaiView extends ResourceController
