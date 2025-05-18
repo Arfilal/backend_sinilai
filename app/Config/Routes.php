@@ -21,3 +21,6 @@ $routes->resource("prodi");
 
 $routes->get('nilaiview', 'NilaiView::index');
 
+$routes->get('mahasiswa/getMahasiswaByNpm/(:segment)', 'MahasiswaController::getMahasiswaByNpm/$1');
+
+
