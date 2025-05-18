@@ -11,7 +11,7 @@ class NilaiView extends ResourceController
 
     public function __construct()
     {
-        $this->model = new ModelViewNilai();
+        $this->model = new v_nilai_mahasiswa();
     }
 
     public function index()
