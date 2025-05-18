@@ -7,7 +7,7 @@ class ModelNilai extends Model
 {
     protected $table = "nilai";
     protected $primaryKey = "id_nilai";
-    protected $allowedFields = ['npm', 'kode_matkul', 'nidn', 'semester', 'tugas', 'uts', 'uas', 'nilai_akhir', 'status'];
+    protected $allowedFields = ['npm', 'kode_matkul', 'nidn', 'tugas', 'uts', 'uas', 'nilai_akhir', 'status'];
 
     
    // Di ModelNilai.php
@@ -15,7 +15,6 @@ protected $validationRules = [
     'npm' =>'required',
     'kode_matkul' =>'required',
     'nidn' =>'required',
-    'semester' => 'required',
     'tugas' =>'required',
     'uts' =>'required',
     'uas' =>'required',
@@ -25,7 +24,6 @@ protected $validationMessages = [
     'npm'=> ['required'=>'Silahkan masukkan npm'],
     'kode_matkul'=> ['required'=>'Silahkan masukkan kode matkul'],
     'nidn'=> ['required'=>'Silahkan masukkan nidn'],
-    'semester'=> ['required'=>'Silahkan masukkan semester'],
     'tugas'=> ['required'=>'Silahkan masukkan tugas'],
     'uts'=> ['required'=>'Silahkan masukkan uts'],
     'uas'=> ['required'=>'Silahkan masukkan uas'],
@@ -40,7 +38,6 @@ protected $validationMessages = [
         ->join('mahasiswa m', 'n.npm = m.npm')
         ->join('mata_kuliah mk', 'n.kode_matkul = mk.kode_matkul')
         ->where('m.nama_mhs', $nama_mhs)
-        ->where('mk.semester', $semester)
         ->get()
         ->getResultArray();
 }
