@@ -5,12 +5,16 @@ use CodeIgniter\Model;
 
 class ModelDosen extends Model
 {
+     // Nama tabel yang digunakan
     protected $table = "dosen";
+    // Primary key dari tabel
     protected $primaryKey = "nidn";
-    protected $useAutoIncrement = false; // NIDN bukan auto increment
+    // Menonaktifkan auto increment karena NIDN ditentukan manual
+    protected $useAutoIncrement = false; 
+     // Field yang boleh diisi secara massal (insert/update)
     protected $allowedFields = ['nidn', 'nama_dosen'];
 
-    // Validasi saat insert/update
+    // Aturan validasi untuk field saat melakukan insert/update
     protected $validationRules = [
         'nidn'        => 'required|numeric|min_length[5]|max_length[20]',
         'nama_dosen'  => 'required|min_length[3]',
@@ -29,6 +33,8 @@ class ModelDosen extends Model
         ],
     ];
 
-    protected $returnType = 'array'; // agar hasil query lebih fleksibel (array)
-    protected $useTimestamps = false; // matikan jika tabel tidak punya created_at & updated_at
+    // Format pengembalian data dari query adalah array
+    protected $returnType = 'array'; 
+    // Menonaktifkan penggunaan created_at dan updated_at
+    protected $useTimestamps = false; 
 }

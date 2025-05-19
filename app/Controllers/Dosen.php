@@ -9,17 +9,23 @@ use App\Controllers\BaseController;
 class Dosen extends BaseController
 {
     use ResponseTrait;
+      // Properti model untuk mengakses data dosen
     protected $model;
 
+     // Konstruktor untuk inisialisasi model dosen
     function __construct()
     {
         $this->model = new ModelDosen();
     }
+
+      // Menampilkan seluruh data dosen, diurutkan berdasarkan nama
     public function index()
     {
         $data = $this->model->orderBy('nama_dosen', 'asc')->findAll();
         return $this->respond($data, 200);
     }
+
+     // Menampilkan data dosen berdasarkan NIDN
     public function show($nidn = null)
     {
         $data = $this->model->where('nidn', $nidn)->findAll();
@@ -29,6 +35,8 @@ class Dosen extends BaseController
             return $this->failNotFound("data tidak ditemukan untuk nidn $nidn");
         }
     }
+
+        // Menambahkan data dosen baru
    public function create()
 {
     // Ambil data dari request
@@ -54,7 +62,7 @@ class Dosen extends BaseController
     }
 }
 
-
+       // Menampilkan data dosen untuk diedit berdasarkan NIDN
     public function edit($nidn)
     {
         $dosen = $this->model->find($nidn);
@@ -64,6 +72,7 @@ class Dosen extends BaseController
         return $this->response->setJSON($dosen);
     }
 
+        // Memperbarui data dosen berdasarkan NIDN
    public function update($nidn)
 {
     // Cek apakah data dosen dengan NIDN tersebut ada
@@ -95,13 +104,15 @@ class Dosen extends BaseController
     }
 }
 
-
+    // Menghapus data dosen berdasarkan NIDN
     public function delete($nidn)
     {
+        // / Cek apakah data tersedia
         $data = $this->model->where('nidn', $nidn)->findAll();
 
         if ($data) {
-            $this->model->where('nidn', $nidn)->delete(); // Perbaikan metode delete()
+            // Hapus data dosen
+            $this->model->where('nidn', $nidn)->delete(); 
 
             $response = [
                 'status' => 200,
@@ -110,7 +121,7 @@ class Dosen extends BaseController
                     'success' => "Data dengan NIDN $nidn berhasil dihapus"
                 ]
             ];
-            return $this->respond($response); // Perbaikan dari responddelete()
+            return $this->respond($response); 
         } else {
             return $this->failNotFound("Data dengan NIDN $nidn tidak ditemukan");
         }
