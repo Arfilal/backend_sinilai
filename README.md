@@ -27,15 +27,15 @@ gambar diatas merupakan contoh dari penggunaan code API dari table nilai, penjel
 ![Image](https://github.com/user-attachments/assets/263755b8-b042-4596-b9e2-492c82e9bc11)
 Dosen
 - GET http://localhost:8080/dosen
-POST http://localhost:8080/dosen/
-DEL http://localhost:8080/dosen/
-PUT http://localhost:8080/dosen/
+- POST http://localhost:8080/dosen/
+- DEL http://localhost:8080/dosen/
+- PUT http://localhost:8080/dosen/
 
 Mahasiswa
-GET http://localhost:8080/mahasiswa
-POST http://localhost:8080/mahasiswa
-DEL http://localhost:8080/mahasiswa/
-PUT http://localhost:8080/mahasiswa/
+- GET http://localhost:8080/mahasiswa
+- POST http://localhost:8080/mahasiswa
+- DEL http://localhost:8080/mahasiswa/
+- PUT http://localhost:8080/mahasiswa/
 
 
 
