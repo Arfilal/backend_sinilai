@@ -104,3 +104,75 @@ untuk table yang saya buat sendiri ada 6 table, terdiri dari table dosen, mahasi
 
 ## Studi Kasus
 Sistem ini digunakan oleh dosen dan admin akademik untuk memasukkan, mengelola, dan memantau nilai mahasiswa dalam suatu mata kuliah. Mahasiswa juga dapat melihat hasil nilai mereka setelah dipublikasikan.
+
+# 🎓 Backend Sinilai
+
+Sistem backend untuk pengelolaan nilai akademik mahasiswa. Dibangun dengan **CodeIgniter 4** dan menggunakan **MySQL** sebagai basis data.
+
+---
+
+## 📁 Struktur Proyek
+
+
+---
+
+## ⚙️ Cara Menjalankan Proyek
+
+### 1. Clone Proyek
+
+```bash
+git clone https://github.com/Arfilal/backend_sinilai.git
+cd backend_sinilai
+
+composer install
+
+cp env .env
+
+CI_ENVIRONMENT = development
+app.baseURL = 'http://localhost:8080/'
+database.default.hostname = localhost
+database.default.database = sinilai2
+database.default.username = root
+database.default.password =
+database.default.DBDriver = MySQLi
+database.default.port = 3306
+
+CREATE TABLE dosen (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nama VARCHAR(100),
+  nip VARCHAR(20)
+);
+
+CREATE TABLE mahasiswa (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nama VARCHAR(100),
+  nim VARCHAR(20),
+  kelas_id INT
+);
+
+CREATE TABLE kelas (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nama VARCHAR(50)
+);
+
+CREATE TABLE matakuliah (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nama VARCHAR(100),
+  dosen_id INT
+);
+
+CREATE TABLE nilai (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  mahasiswa_id INT,
+  matakuliah_id INT,
+  nilai INT
+);
+
+CREATE TABLE prodi (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nama VARCHAR(100)
+);
+
+php spark serve
+
+
